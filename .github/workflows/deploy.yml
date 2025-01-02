@@ -15,6 +15,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Change file permissions
+        run: chmod +x ./serv00-play/keepalive.sh
+      - name: Set working directory
+        run: cd serv00-play
+      - name: Execute script
+        run: ./keepalive.sh
+
       - name: 安装依赖
         run: |
           sudo apt-get install sshpass
